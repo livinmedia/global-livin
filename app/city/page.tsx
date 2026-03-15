@@ -3,7 +3,7 @@ export const dynamic = 'force-dynamic'
 import { useEffect, useState } from 'react'
 import Sidebar from '@/components/layout/Sidebar'
 import { createHubClient, UserClaims } from '@/lib/supabase'
-import { createClient } from '@supabase/supabase-js'
+// removed createClient import
 
 interface CityData {
   name: string; slug: string; state_abbr: string; has_market_mayor: boolean;
@@ -21,7 +21,7 @@ export default function CityDashboard() {
   const [view, setView] = useState<'overview' | 'city'>('overview')
   const supabase = createHubClient()
 
-  const livin = createClient(
+  // removed: const livin = createClient(
     process.env.NEXT_PUBLIC_LIVIN_SUPABASE_URL || 'https://bmemtekrchzoxpwtaufd.supabase.co',
     process.env.NEXT_PUBLIC_LIVIN_SUPABASE_ANON_KEY || ''
   )
