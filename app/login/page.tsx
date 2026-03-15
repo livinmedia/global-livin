@@ -1,6 +1,6 @@
 'use client'
+export const dynamic = 'force-dynamic'
 import { useState } from 'react'
-import { useRouter } from 'next/navigation'
 import { createHubClient } from '@/lib/supabase'
 
 export default function LoginPage() {
@@ -9,7 +9,6 @@ export default function LoginPage() {
   const [isSignup, setIsSignup] = useState(false)
   const [error, setError] = useState('')
   const [loading, setLoading] = useState(false)
-  const router = useRouter()
   const supabase = createHubClient()
 
   async function handleSubmit(e: React.FormEvent) {
@@ -21,7 +20,7 @@ export default function LoginPage() {
       const { error } = await supabase.auth.signInWithPassword({ email, password })
       if (error) { setError(error.message); setLoading(false); return }
     }
-    router.push('/feed')
+    window.location.href = '/feed'
   }
 
   return (

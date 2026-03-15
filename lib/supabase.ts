@@ -1,10 +1,14 @@
-import { createClient } from '@supabase/supabase-js'
+import { createClient, SupabaseClient } from '@supabase/supabase-js'
+
+let hubClient: SupabaseClient | null = null
 
 export function createHubClient() {
-  return createClient(
+  if (hubClient) return hubClient
+  hubClient = createClient(
     process.env.NEXT_PUBLIC_SUPABASE_URL!,
     process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!
   )
+  return hubClient
 }
 
 export function createRkrtClient() {
