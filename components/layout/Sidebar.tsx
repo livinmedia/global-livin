@@ -50,7 +50,7 @@ const I = {
 export default function Sidebar({ claims }: { claims: UserClaims | null }) {
   const p = usePathname()
   const isRecruiter = hasRole(claims, 'rkrt')
-  const isMM = claims?.spokes.some(s => s.slug === 'livin' && s.role === 'market_mayor')
+  const isMM = claims?.spokes.some(s => s.slug === 'livin' && s.role === 'market_mayor' || s.role === 'owner' || s.role === 'owner')
 
   return (
     <div style={{
