@@ -4,7 +4,7 @@ import { useEffect, useState } from 'react'
 import Sidebar from '@/components/layout/Sidebar'
 import { createHubClient, UserClaims } from '@/lib/supabase'
 
-const LIVIN_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImJtZW10ZWtyY2h6b3hwd3RhdWZkIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzI0MzYwNjQsImV4cCI6MjA4ODAxMjA2NH0.4mVNMV0Z8cMcR4OaZbYABMCFLGCMXVxMaSTLYPFpnPY'
+const LIVIN_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImJtZW10ZWtyY2h6b3hwd3RhdWZkIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzI0ODE1NzgsImV4cCI6MjA4ODA1NzU3OH0.xMnO8vn_9UOY-fhUYZF4aj4bUvzRg_NIWlc_2Cm93Xk'
 const LIVIN_URL = 'https://bmemtekrchzoxpwtaufd.supabase.co/rest/v1'
 
 async function livinFetch(path: string) {
